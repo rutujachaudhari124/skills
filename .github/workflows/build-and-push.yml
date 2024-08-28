@@ -24,10 +24,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-docker-
  
-    - name: Build Docker image
-      run: |
-        docker build -t python-image:latest .
- 
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
