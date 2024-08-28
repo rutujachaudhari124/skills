@@ -41,7 +41,3 @@ jobs:
         push: true
         tags: rutuja1999/test1:latest
         file: ./Dockerfile
- 
-    - name: Push Docker image
-      run: |
-        docker push python-image:latest
