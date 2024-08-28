@@ -37,3 +37,12 @@ jobs:
     - name: Test with pytest
       run: 
         python demo.py
+    - name: Build and push docker image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with: 
+           image: rutuja1999/test1
+           registry: docker.io
+           username: ${{ secrets.DOCKERHUB_USERNAME }}
+           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      
