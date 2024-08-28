@@ -38,11 +38,12 @@ jobs:
       run: 
         python demo.py
     - name: Build and push docker image
-      uses: mr-smithers-excellent/docker-build-push@v4
-      with: 
-           image: rutuja1999/test1
-           registry: docker.io
-           username: ${{ secrets.DOCKERHUB_USERNAME }}
-           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: >
+          ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ github.sha }},
+          ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:latest
 
       
