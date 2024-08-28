@@ -6,4 +6,4 @@ while i <= rows:
         print((i * 2 - 1), end=" ")
         j = j + 1
     i = i + 1
-    print('')
+    print('*')
