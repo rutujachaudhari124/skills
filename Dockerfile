@@ -9,3 +9,4 @@ COPY . .
  
 # Run the Python script
 CMD ["python", "./demo.py"]
+
